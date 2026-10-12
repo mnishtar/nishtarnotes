@@ -1,0 +1,68 @@
+{
+  "name": "NISHTAR",
+  "author": "Mahd Nishtar",
+  "tagline": "The Great Work Experiment",
+  "description": "Mahd Nishtar, MD, writes about reclaiming your attention so you can find and do Great Work.",
+  "url": "https://nishtarnotes.com",
+  "domain": "nishtarnotes.com",
+
+  "substack": "https://nishtarnotes.substack.com",
+  "substack_profile": "https://substack.com/@nishtarnotes",
+  "x": "https://x.com/nishtarnotes",
+  "tribes_url": "https://mnishtar.github.io/family-health-dashboard/",
+
+  "newsletter_name": "1-3-1",
+  "newsletter_title_prefix": "1-3-1:",
+  "substack_import_since": "2026-10-12",
+  "articles_coming": "The first Article publishes at the end of October 2026.",
+  "notes_on_notes_page": 10,
+
+  "topic_groups": [
+    {
+      "name": "The Work",
+      "topics": [
+        {
+          "name": "Great Work",
+          "slug": "great-work",
+          "blurb": "Finding the work that is truly yours, and doing it well.",
+          "keywords": ["great work", "purpose", "craft", "mastery", "master", "calling", "career", "ambition", "meaningful", "deliberate practice", "expert", "write", "writing", "create", "creative", "build", "legacy"]
+        },
+        {
+          "name": "Attention",
+          "slug": "attention",
+          "blurb": "How to reclaim your focus in a world built to take it.",
+          "keywords": ["attention", "focus", "distraction", "distracted", "phone", "multitask", "multitasking", "deep work", "notification", "notifications", "scroll", "scrolling", "concentrate", "concentration", "present"]
+        }
+      ]
+    },
+    {
+      "name": "The Foundation",
+      "topics": [
+        {
+          "name": "Meditation",
+          "slug": "meditation",
+          "blurb": "Training the mind that does the work.",
+          "keywords": ["meditation", "meditate", "meditating", "mindful", "mindfulness", "breath", "breathing", "zen", "koan", "stillness", "awareness", "contemplative", "sit", "sitting", "silence", "witness"]
+        },
+        {
+          "name": "Sleep",
+          "slug": "sleep",
+          "blurb": "The foundation every other habit stands on.",
+          "keywords": ["sleep", "sleeping", "insomnia", "nap", "circadian", "bedtime", "melatonin", "dream", "rest", "tired", "fatigue"]
+        },
+        {
+          "name": "Exercise",
+          "slug": "exercise",
+          "blurb": "Moving the body that carries the mind.",
+          "keywords": ["exercise", "workout", "lift", "lifting", "run", "running", "steps", "walk", "walking", "strength", "cardio", "gym", "fitness", "climb", "climbing", "muscle", "train", "training"]
+        },
+        {
+          "name": "Diet",
+          "slug": "diet",
+          "blurb": "Eating for energy, clarity and a long life.",
+          "keywords": ["diet", "food", "eat", "eating", "nutrition", "protein", "fasting", "meal", "meals", "sugar", "vegetable", "vegetables", "fiber", "calories", "hunger"]
+        }
+      ]
+    }
+  ]
+}

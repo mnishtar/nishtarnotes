@@ -1,0 +1,45 @@
+    <section class="band">
+      <div class="container intro-grid">
+        <div class="intro">
+          <p class="eyebrow">{{cfg:tagline}}</p>
+          <h1 class="display">Reclaim your attention. Do your Great Work.</h1>
+          <p>I'm Mahd Nishtar, a pain physician. I write about one question. How do you find the work that is truly yours, and give it your full attention?</p>
+          <p>Most days I publish a short <a href="{{link:notes/}}">Note</a>. Every Sunday I send the <a href="{{link:newsletter/}}">1-3-1 newsletter</a>. Once a month I publish a deep-dive <a href="{{link:articles/}}">Article</a>. Everything lives here, free.</p>
+        </div>
+{{signup}}
+      </div>
+    </section>
+
+    <div class="dots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+
+    <section class="container section">
+      <div class="section-head">
+        <h2 class="section-title">Latest Notes</h2>
+        <a class="section-link" href="{{link:notes/}}">All Notes <span aria-hidden="true">→</span></a>
+      </div>
+{{latest_notes}}
+    </section>
+
+    <section class="container section">
+      <div class="section-head">
+        <h2 class="section-title">Browse by topic</h2>
+      </div>
+{{topic_tiles}}
+    </section>
+
+    <section class="container section split">
+      <div class="split-col">
+        <div class="section-head">
+          <h2 class="section-title">From the 1-3-1</h2>
+          <a class="section-link" href="{{link:newsletter/}}">All issues <span aria-hidden="true">→</span></a>
+        </div>
+{{latest_issue}}
+      </div>
+      <div class="split-col">
+        <div class="section-head">
+          <h2 class="section-title">Latest Articles</h2>
+          <a class="section-link" href="{{link:articles/}}">All Articles <span aria-hidden="true">→</span></a>
+        </div>
+{{latest_articles}}
+      </div>
+    </section>

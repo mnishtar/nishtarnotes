@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <link rel="canonical" href="{{canonical}}">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{canonical}}">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@nishtarnotes">
+  <meta name="theme-color" content="#0e0d0b">
+  <link rel="icon" href="{{link:favicon.svg}}" type="image/svg+xml">
+  <link rel="alternate" type="application/rss+xml" title="{{cfg:name}}" href="{{link:feed.xml}}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{link:styles.css}}">
+</head>
+<body class="{{body_class}}">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="{{link:}}">{{cfg:name}}</a>
+      <ul class="nav-main">
+        <li><a href="{{link:notes/}}"{{nav_notes}}>Notes</a></li>
+        <li><a href="{{link:articles/}}"{{nav_articles}}>Articles</a></li>
+        <li><a href="{{link:newsletter/}}"{{nav_newsletter}}>Newsletter</a></li>
+        <li><a href="{{link:app/}}"{{nav_app}}>App</a></li>
+      </ul>
+      <a class="nav-about" href="{{link:about/}}"{{nav_about}}>About</a>
+    </nav>
+  </header>
+
+  <main id="main">
+{{content}}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; {{year}} Mahd Nishtar. {{cfg:tagline}}.</p>
+      <ul class="footer-links">
+        <li><a href="{{link:notes/}}">Notes</a></li>
+        <li><a href="{{link:articles/}}">Articles</a></li>
+        <li><a href="{{link:newsletter/}}">Newsletter</a></li>
+        <li><a href="{{link:app/}}">App</a></li>
+        <li><a href="{{link:about/}}">About</a></li>
+        <li><a href="{{cfg:x}}">X</a></li>
+        <li><a href="{{cfg:substack_profile}}">Substack</a></li>
+        <li><a href="{{link:feed.xml}}">RSS</a></li>
+      </ul>
+    </div>
+  </footer>
+{{preview_js}}
+</body>
+</html>
