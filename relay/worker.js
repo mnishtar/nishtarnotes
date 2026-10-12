@@ -17,6 +17,7 @@
  *   GITHUB_REPO   (text)    e.g. mnishtar/nishtarnotes
  *   GITHUB_BRANCH (text)    optional, defaults to main
  *   MIN_WORDS     (text)    optional, defaults to 100
+ *   MAX_WORDS     (text)    optional, defaults to 1000 (longer posts are Articles, imported from Substack)
  *   TIMEZONE      (text)    optional, defaults to America/New_York
  */
 
@@ -42,6 +43,11 @@ export default {
     const words = text.split(/\s+/).filter(Boolean).length;
     const minWords = parseInt(env.MIN_WORDS || "100", 10);
     if (words <= minWords) return reply({ skipped: `${words} words, not a mini-essay` });
+    // Long essays and the 1-3-1 newsletter reach the site through Substack
+    // (Articles and Newsletter), so they must not also become Notes.
+    const maxWords = parseInt(env.MAX_WORDS || "1000", 10);
+    if (words > maxWords) return reply({ skipped: `${words} words, an Article (comes from Substack)` });
+    if (/^#*\s*1-3-1\b/i.test(text)) return reply({ skipped: "1-3-1 newsletter (comes from Substack)" });
 
     // 3. First line is the title, the rest is the body.
     const lines = text.split("\n");
