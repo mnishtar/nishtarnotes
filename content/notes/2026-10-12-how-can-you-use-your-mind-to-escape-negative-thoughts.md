@@ -21,8 +21,6 @@ One way to redirect your negative thoughts is to use a mantra:
 >
 > I will honor this.
 >
-> This too shall past.
->
 > Not my will, but thy will.
 
 Start with the little things. Someone cuts you off in traffic. The weather isn't how you want it. Someone says something that rubs you the wrong way.
