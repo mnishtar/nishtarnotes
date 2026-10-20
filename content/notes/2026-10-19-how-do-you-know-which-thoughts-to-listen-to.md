@@ -4,11 +4,11 @@ date: 2026-10-19
 ---
 Most of your thoughts are not worth listening to.
 
-They distract you and rob you of joy. Your mind stays busy judging you, fixating on the past, or ruminating on the future. All that noise keeps you from seeing the world as it is.
+Your mind judges you, fixates on the past, and ruminates on the future. It distracts you from the world as it is. And it robs you of joy.
 
-**The solution is to watch your thoughts without reacting.**
+**The solution isn’t to force your mind into silence. It’s to watch your thoughts without reacting.**
 
-A thought is simply a temporary expression passing through your mind. When you watch it instead of reacting to it, you begin to see which thoughts are useful and which to ignore.
+A thought is simply a temporary expression passing through your mind. When you watch the mind instead of reacting to it, you begin to see which thoughts are useful and which to ignore.
 
 Some thoughts tear you down:
 
@@ -20,9 +20,9 @@ Let these go.
 
 Other thoughts raise you up:
 
+- *“I can handle this.”*
 - *“I can figure this out.”*
 - *“I’ve learned from my past.”*
-- *“I can handle this.”*
 
 Listen to these.
 
