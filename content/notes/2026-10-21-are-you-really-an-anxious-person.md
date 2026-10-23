@@ -12,9 +12,9 @@ But if you observe your mind, you will see:
 
 Your consciousness transcends all mental, emotional, and physical states. Anxiety is just one of them.
 
-So if you’re having a bad day, relax your shoulders and your breathing, and say, *“This is what it means to experience anxiety.”*
+You can test this the next time you have a bad day. Relax your shoulders and your breathing, and say, *“This is what it means to experience anxiety.”*
 
-The Self is watching the psyche. You’ll see that you can observe your psyche even when you’re not doing well.
+In that moment, the Self is watching the psyche. You’ll see that you can observe your psyche even when you’re not doing well.
 
 The longer you watch the mind without getting pulled into it, the more spiritual strength you build to rise above its negative states. Even in the middle of anxiety, you can feel uplifted.
 
