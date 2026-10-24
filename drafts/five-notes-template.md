@@ -11,7 +11,7 @@ slug: october-30-2026
 
 *Source: Where it comes from*
 
-Reflection: Your reflection on the quote.
+**Reflection:** Your reflection on the quote.
 
 ## 3 Ideas From Me
 
