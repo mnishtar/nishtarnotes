@@ -5,7 +5,7 @@
 | What | Where you write it | How it reaches the site |
 |---|---|---|
 | **Note** (most days) | Eden, as you do now | Any Eden post over 100 words becomes a Note. Its first line is the title. Live in about 2 minutes. |
-| **1-3-1** (Sundays) | Substack | Give it a title that starts with `1-3-1:`. The site picks it up within 3 hours and files it under Newsletter. |
+| **Five Notes** (Fridays) | Substack | Give it a title that starts with `Five Notes:`. The site picks it up within 3 hours and files it under Newsletter. If the issue is already on the site (posted by hand from `drafts/five-notes-template.md`), use the exact same title and it won't be added twice. |
 | **Article** (monthly) | Substack | Any other Substack post. The site picks it up within 3 hours and files it under Articles. |
 
 Each piece is filed under a topic (Great Work, Attention, Meditation, Sleep, Exercise, Diet) based on its words. To pick the topic yourself, add a line like `topic: Sleep` to the top of the file.
@@ -75,7 +75,7 @@ Once the site is live, type your own email into any signup box. You should get S
 ## Your routine
 
 - **Daily:** post in Eden. Nothing else to do.
-- **Sunday:** send the 1-3-1 from Substack with a title starting `1-3-1:`.
+- **Friday:** send Five Notes from Substack with a title starting `Five Notes:`.
 - **Monthly:** publish the Article on Substack.
 - **Monthly:** export your subscriber list from Substack (**Dashboard → Subscribers → Export**) and keep the file. Your list is yours wherever you go.
 

@@ -1,5 +1,5 @@
 ---
-title: 1-3-1: Example issue showing the newsletter format
+title: Five Notes: Example issue showing the newsletter format
 date: 2026-10-18
 ---
 ## 1 Quote
@@ -14,6 +14,6 @@ date: 2026-10-18
 
 **III.** The third idea.
 
-## 1 Essay
+## 1 Question For You
 
-The week's best mini-essay goes here, the Note readers responded to most.
+One question to consider, linked to a Note that explores it.

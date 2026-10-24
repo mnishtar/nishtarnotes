@@ -12,7 +12,7 @@ without installing anything.
 Content lives in three folders:
     content/notes/        daily Notes        (YYYY-MM-DD-slug.md)
     content/articles/     monthly Articles   (YYYY-MM-DD-slug.md or .html)
-    content/newsletter/   weekly 1-3-1       (YYYY-MM-DD-slug.md or .html)
+    content/newsletter/   weekly Five Notes       (YYYY-MM-DD-slug.md or .html)
 
 Each file starts with a small header:
     ---
@@ -46,7 +46,7 @@ DEFAULT_TOPIC = TOPICS[0]
 KINDS = {
     "notes": {"label": "Note", "plural": "Notes", "dir": "notes"},
     "articles": {"label": "Article", "plural": "Articles", "dir": "articles"},
-    "newsletter": {"label": "The 1-3-1 Newsletter", "plural": "Newsletters", "dir": "newsletter"},
+    "newsletter": {"label": "Five Notes", "plural": "Newsletters", "dir": "newsletter"},
 }
 
 
@@ -59,8 +59,8 @@ def esc(s):
 
 
 def title_html(s):
-    """Escape a title and keep "1-3-1" from breaking across lines."""
-    return esc(s).replace("1-3-1", '<span class="nw">1-3-1</span>')
+    """Escape a title and keep "Five Notes" from breaking across lines."""
+    return esc(s).replace("Five Notes", '<span class="nw">Five Notes</span>')
 
 
 def long_date(d):
@@ -345,7 +345,7 @@ class Builder:
     def item_rows(self, L, items, show_kind=False, show_excerpt=True):
         rows = []
         for it in items:
-            kind = f'<span class="row-kind">{KINDS[it["kind"]]["label"] if it["kind"] != "newsletter" else "1-3-1"}</span>' if show_kind else ""
+            kind = f'<span class="row-kind">{KINDS[it["kind"]]["label"] if it["kind"] != "newsletter" else "Five Notes"}</span>' if show_kind else ""
             ex = f'<p class="row-excerpt">{esc(it["excerpt"])}</p>' if show_excerpt and it["excerpt"] else ""
             rows.append(
                 f'<li class="row"><a class="row-link" href="{L(it["path"])}">'
@@ -428,10 +428,10 @@ class Builder:
         L = Linker(0, self.preview)
         notes, issues, arts = self.items["notes"], self.items["newsletter"], self.items["articles"]
         latest_notes = self.item_rows(L, notes[:5]) if notes else self.empty("The first Note is on its way. A new one publishes most days.")
-        latest_issue = self.item_rows(L, issues[:3]) if issues else self.empty("The first issue of the 1-3-1 is coming soon. Sign up above and it will land in your inbox on a Sunday morning.")
+        latest_issue = self.item_rows(L, issues[:3]) if issues else self.empty("The first issue of Five Notes is coming soon. Sign up above and it will land in your inbox on a Friday.")
         latest_articles = self.item_rows(L, arts[:3]) if arts else self.empty(esc(CFG["articles_coming"]))
         content = fill(template("home.html"), L, {
-            "signup": self.signup("One quote, three ideas, one essay. Every Sunday.", "Get the 1-3-1",
+            "signup": self.signup("One quote, three ideas, one question. Every Friday.", "Get Five Notes",
                                   "One email a week. Unsubscribe anytime."),
             "latest_notes": latest_notes, "latest_issue": latest_issue, "latest_articles": latest_articles,
             "topic_tiles": self.topic_tiles(L),
@@ -447,7 +447,7 @@ class Builder:
         if len(notes) > k:
             archive = f'<section class="archive"><h2 class="section-title">The archive</h2>{self.month_archive(L, notes[k:])}</section>'
         content = fill(template("notes.html"), L, {
-            "signup": self.signup("Get the week's best Notes every Sunday.", "Get the 1-3-1", "One email a week. Unsubscribe anytime."),
+            "signup": self.signup("Get Five Notes in your inbox every Friday.", "Get Five Notes", "One email a week. Unsubscribe anytime."),
             "stream": stream, "archive": archive, "count": len(notes),
         })
         self.page("notes/index.html", "Notes", content, L, nav="notes", canonical="notes/",
@@ -470,18 +470,18 @@ class Builder:
     def build_newsletter(self):
         L = Linker(1, self.preview)
         issues = self.items["newsletter"]
-        archive = self.issue_archive(L, issues) if issues else self.empty("The first issue is coming soon. Sign up and it will be waiting in your inbox on a Sunday morning.")
+        archive = self.issue_archive(L, issues) if issues else self.empty("The first issue is coming soon. Sign up and it will be waiting in your inbox on a Friday.")
         content = fill(template("newsletter.html"), L, {
-            "signup": self.signup("Get the 1-3-1 every Sunday morning.", "Try it", "One email a week. Unsubscribe anytime."),
+            "signup": self.signup("Get Five Notes every Friday.", "Try it", "One email a week. Unsubscribe anytime."),
             "archive": archive,
         })
-        self.page("newsletter/index.html", "The 1-3-1 Newsletter", content, L, nav="newsletter", canonical="newsletter/",
-                  description="The 1-3-1: one quote, three ideas and one essay from Mahd Nishtar, every Sunday.")
+        self.page("newsletter/index.html", "Five Notes", content, L, nav="newsletter", canonical="newsletter/",
+                  description="Five Notes: 1 quote, 3 ideas and 1 question from Nishtar, every Friday.")
 
     def build_static(self, name, nav, title, description):
         L = Linker(1, self.preview)
         content = fill(template(f"{name}.html"), L, {
-            "signup": self.signup("Get the 1-3-1 every Sunday morning.", "Try it", "One email a week. Unsubscribe anytime."),
+            "signup": self.signup("Get Five Notes every Friday.", "Try it", "One email a week. Unsubscribe anytime."),
         })
         self.page(f"{name}/index.html", title, content, L, nav=nav, canonical=f"{name}/",
                   description=description, body_class=f"page-{name}")
@@ -502,7 +502,7 @@ class Builder:
             content = fill(template("topic.html"), L, {
                 "group": esc(group), "name": esc(t["name"]), "blurb": esc(t["blurb"]),
                 "sections": "".join(parts),
-                "signup": self.signup(f"Get my best ideas on {esc(t['name'].lower())} every Sunday.", "Get the 1-3-1",
+                "signup": self.signup(f"Get my best ideas on {esc(t['name'].lower())} every Friday.", "Get Five Notes",
                                       "One email a week. Unsubscribe anytime."),
             })
             self.page(f"topics/{t['slug']}/index.html", t["name"], content, L, nav="articles",
@@ -535,9 +535,9 @@ class Builder:
                     where = "Substack" if "substack" in host else "X" if host in ("x.com", "twitter.com") else host
                     source = f'<p class="source-note">Also published on <a href="{esc(it["source"])}">{esc(where)}</a>.</p>'
                 signup_text = {
-                    "notes": ("The best Notes of each week go out in the 1-3-1 every Sunday.", "Get the 1-3-1"),
-                    "articles": ("Get new Articles and the 1-3-1 every Sunday.", "Get the 1-3-1"),
-                    "newsletter": ("Get the next issue in your inbox on Sunday.", "Try it"),
+                    "notes": ("Get Five Notes in your inbox every Friday.", "Get Five Notes"),
+                    "articles": ("Get new Articles and Five Notes every Friday.", "Get Five Notes"),
+                    "newsletter": ("Get the next issue in your inbox on Friday.", "Try it"),
                 }[kind]
                 kicker = KINDS[kind]["label"]
                 kicker_link = L(KINDS[kind]["dir"] + "/")

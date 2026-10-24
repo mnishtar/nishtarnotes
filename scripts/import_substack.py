@@ -7,8 +7,9 @@ import_substack.py: copies new Substack posts into the site as plain files.
 
 Rules (from site.json):
   - Only posts published on or after "substack_import_since" are imported.
-  - Titles that start with "1-3-1" go to content/newsletter/. Everything else goes to content/articles/.
-  - A post is never imported twice (matched by its Substack link).
+  - Titles that start with "Five Notes:" go to content/newsletter/. Everything else goes to content/articles/.
+  - A post is never imported twice (matched by its Substack link, or by its title
+    when the issue was already posted to the site by hand).
   - Substack's subscribe buttons and widgets are removed; text, images, quotes and footnotes are kept.
 
 Runs once a day on GitHub automatically. Uses only the Python standard library.
@@ -124,7 +125,12 @@ def slug_from_link(link, title):
     return s[:80] or "post"
 
 
-def already_imported(link):
+def _norm(s):
+    return re.sub(r"[^a-z0-9]+", " ", unescape(s).lower()).strip()
+
+
+def already_imported(link, title=""):
+    want = _norm(title)
     for kind in ("articles", "newsletter"):
         folder = ROOT / "content" / kind
         if not folder.exists():
@@ -133,6 +139,9 @@ def already_imported(link):
             if f.suffix in (".md", ".html"):
                 head = f.read_text(encoding="utf-8", errors="ignore")[:1500]
                 if f"source: {link}" in head:
+                    return True
+                m = re.search(r"^title:\s*(.+)$", head, re.M)
+                if want and m and _norm(m.group(1)) == want:
                     return True
     return False
 
@@ -145,7 +154,7 @@ def main():
     a = ap.parse_args()
 
     since = dt.date.fromisoformat(a.since)
-    prefix = CFG.get("newsletter_title_prefix", "1-3-1:").rstrip(":").strip().lower()
+    prefix = CFG.get("newsletter_title_prefix", "Five Notes:").rstrip(":").strip().lower()
     if a.feed:
         xml_bytes = Path(a.feed).read_bytes()
     else:
@@ -163,7 +172,7 @@ def main():
         if not (title and link and pub):
             continue
         posted = parsedate_to_datetime(pub).astimezone(LOCAL_TZ).date()
-        if posted < since or already_imported(link):
+        if posted < since or already_imported(link, title):
             continue
         kind = "newsletter" if title.lower().startswith(prefix) else "articles"
         body = clean_html(item.findtext("content:encoded", default="", namespaces=NS))
