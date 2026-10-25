@@ -8,7 +8,7 @@ In 1753, the Italian sculptor Giuseppe Sanmartino finished a statue of the dead 
 
 His patron, Raimondo di Sangro, prince of Sansevero, had asked for “a marble statue sculpted with the greatest realism.”
 
-The result was a masterpiece carved from a single block of marble.
+The result was a masterpiece carved from a single block.
 
 Look closely and you’ll see Sanmartino’s attention to detail in the swollen vein on Christ’s forehead, the nail wounds in his hands, and the ribs sinking beneath the veil. At his feet lie the crown of thorns and a pair of pincers, telling the story of his final hours.
 
