@@ -12,6 +12,6 @@ The result is a masterpiece carved from a single block.
 
 Look closely and you’ll see Sanmartino’s attention to detail in the swollen vein on Christ’s forehead, the nail wounds in his hands, and the ribs sinking beneath the veil. At his feet lie the crown of thorns and a pair of pincers, telling the story of his final hours.
 
-In a single block of marble, the smallest miscalculation can ruin a sculpture. Every fold and every wound had to be a choice.
+In a single block of marble, the smallest miscalculation can ruin the work. Every fold and every wound is a choice.
 
 **Great Work leaves no detail to chance.**
