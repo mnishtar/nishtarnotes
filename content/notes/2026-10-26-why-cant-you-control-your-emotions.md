@@ -1,5 +1,5 @@
 ---
-title: Why can’t I control my emotions?
+title: Why can’t you control your emotions?
 date: 2026-10-26
 ---
 **Anger is the release of stored energy.**
