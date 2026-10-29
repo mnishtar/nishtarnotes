@@ -18,10 +18,8 @@ Truth is found when you let go. You stop clinging to your preferences and let li
 
 Our greatest understanding doesn’t come from thinking. It comes from the quiet mind that goes beyond thought.
 
-So do not reject your intellect. Go beyond it instead.
+Do not reject your intellect. Go beyond it instead.
 
 Surrender to the unfolding of life, and let your curiosity yearn for truth, because there you’ll find clarity and something far greater than the mind.
 
-That is where your greatest growth lies.[^singer]
-
-[^singer]: Inspired by the teachings of Michael Singer.
+That is where your greatest growth lies.
