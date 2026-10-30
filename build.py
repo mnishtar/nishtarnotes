@@ -359,8 +359,11 @@ class Builder:
             out.append(
                 f'<article class="note-full">'
                 f'<p class="note-meta"><time datetime="{n["date"].isoformat()}">{long_date(n["date"])}</time>'
-                f'<span aria-hidden="true">·</span>{self.topic_link(L, n["topic"])}</p>'
-                f'<h2 class="note-title"><a href="{L(n["path"])}">{esc(n["title"])}</a></h2>'
+                f'<span aria-hidden="true">·</span>'
+                + (f'<a class="topic-tag" href="{L("newsletter/")}">Five Notes</a>' if n["kind"] == "newsletter"
+                   else self.topic_link(L, n["topic"]))
+                + f'</p>'
+                f'<h2 class="note-title"><a href="{L(n["path"])}">{title_html(n["title"])}</a></h2>'
                 f'<div class="prose">{n["body"]}</div></article>')
         return "".join(out)
 
@@ -440,7 +443,9 @@ class Builder:
 
     def build_notes(self):
         L = Linker(1, self.preview)
-        notes = self.items["notes"]
+        # The Notes feed is the full record: daily Notes plus every Five Notes issue, newest first.
+        # Issues keep their home under /newsletter/; the feed links to them there.
+        notes = sorted(self.items["notes"] + self.items["newsletter"], key=lambda x: (x["date"], x["kind"] == "newsletter"), reverse=True)
         k = CFG.get("notes_on_notes_page", 10)
         stream = self.note_stream(L, notes[:k]) if notes else self.empty("The first Note is on its way. A new one publishes most days.")
         archive = ""
