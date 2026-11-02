@@ -223,6 +223,13 @@ sup.fn-ref { font-family: var(--sans); font-size: 0.62em; line-height: 0; }
 sup.fn-ref a { color: var(--accent); border: 0; padding-inline: 0.1em; }
 .footnotes { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 0.92rem; color: var(--muted); }
 .footnotes-label { font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+details.footnotes > summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 0.6rem; padding-block: 0.4rem; color: var(--heading); }
+details.footnotes > summary::-webkit-details-marker { display: none; }
+details.footnotes > summary::after { content: "+"; font-size: 1rem; font-weight: 400; letter-spacing: 0; color: var(--accent); }
+details.footnotes[open] > summary::after { content: "−"; }
+details.footnotes > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+details.footnotes ol { margin-top: 1rem; }
+details.footnotes li { overflow-wrap: anywhere; }
 .footnotes a.fn-back { border: 0; color: var(--accent); }
 
 /* ---------- single post ---------- */

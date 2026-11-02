@@ -198,7 +198,7 @@ def markdown(text, fn_numbers=None, footnotes=True):
         lis = "".join(
             f'<li id="fn-{k}">{md_inline(fn_defs.get(k, ""), {})} <a href="#fnref-{k}" class="fn-back" aria-label="Back to text">↩</a></li>'
             for k, _ in items)
-        out.append(f'<div class="footnotes"><p class="footnotes-label">Notes</p><ol>{lis}</ol></div>')
+        out.append(f'<details class="footnotes"><summary class="footnotes-label">Sources</summary><ol>{lis}</ol></details>')
     return "\n".join(out)
 
 
@@ -330,8 +330,12 @@ class Builder:
                      ("notes", "articles", "newsletter", "app", "about")}
         full_title = title if title == CFG["name"] else f"{title} | {CFG['name']}"
         preview_js = ""
+        if "fn-ref" in content:
+            preview_js += ("<script>(function(){function o(){var d=document.querySelector('details.footnotes');if(d)d.open=true;}"
+                           "document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('sup.fn-ref a'))o();});"
+                           "if(location.hash.indexOf('#fn-')===0)o();})();</script>")
         if self.preview:
-            preview_js = ("<script>document.querySelectorAll('.signup-form').forEach(function(f){"
+            preview_js += ("<script>document.querySelectorAll('.signup-form').forEach(function(f){"
                           "f.addEventListener('submit',function(e){e.preventDefault();"
                           "var s=f.parentNode.querySelector('.signup-status');s.hidden=false;"
                           "s.textContent='Preview only. On nishtarnotes.com this button subscribes you through Substack.';});});"
@@ -367,10 +371,13 @@ class Builder:
                 f'<p class="note-meta"><time datetime="{n["date"].isoformat()}">{long_date(n["date"])}</time>'
                 f'<span aria-hidden="true">·</span>'
                 + (f'<a class="topic-tag" href="{L("newsletter/")}">Five Notes</a>' if n["kind"] == "newsletter"
+                   else f'<a class="topic-tag" href="{L("articles/")}">Article</a>' if n["kind"] == "articles"
                    else self.topic_link(L, n["topic"]))
                 + f'</p>'
                 f'<h2 class="note-title"><a href="{L(n["path"])}">{title_html(n["title"])}</a></h2>'
-                f'<div class="prose">{n["body"]}</div></article>')
+                + (f'<div class="prose"><p>{esc(n["subtitle"] or n["excerpt"])}</p>'
+                   f'<p><a href="{L(n["path"])}">Read the full Article<span aria-hidden="true"> →</span></a></p></div></article>'
+                   if n["kind"] == "articles" else f'<div class="prose">{n["body"]}</div></article>'))
         return "".join(out)
 
     def month_archive(self, L, items):
@@ -448,9 +455,11 @@ class Builder:
 
     def build_notes(self):
         L = Linker(1, self.preview)
-        # The Notes feed is the full record: daily Notes plus every Five Notes issue, newest first.
-        # Issues keep their home under /newsletter/; the feed links to them there.
-        notes = sorted(self.items["notes"] + self.items["newsletter"], key=lambda x: (x["date"], x["kind"] == "newsletter"), reverse=True)
+        # The Notes feed is the full record: daily Notes, every Five Notes issue and every Article, newest first.
+        # Issues and Articles keep their homes under /newsletter/ and /articles/; the feed links to them there.
+        order = {"notes": 0, "newsletter": 1, "articles": 2}
+        notes = sorted(self.items["notes"] + self.items["newsletter"] + self.items["articles"],
+                       key=lambda x: (x["date"], order[x["kind"]]), reverse=True)
         k = CFG.get("notes_on_notes_page", 10)
         stream = self.note_stream(L, notes[:k]) if notes else self.empty("The first Note is on its way. A new one publishes every day.")
         archive = ""
