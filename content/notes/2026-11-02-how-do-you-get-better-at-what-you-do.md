@@ -1,7 +1,6 @@
 ---
 title: How do you get better at what you do?
 date: 2026-11-02
-topic: Great Work
 ---
 **You will always fall to the minimum standards you set.**
 
@@ -23,4 +22,4 @@ Consistency matters more than how much you cram into a day. That’s why your st
 
 So pick a big goal and look at the standard you’ve set.
 
-Does your minimum standard match your goal?
+*Does your minimum standard match your goal?*
