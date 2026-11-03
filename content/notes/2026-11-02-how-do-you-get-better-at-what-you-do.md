@@ -1,6 +1,7 @@
 ---
 title: How do you get better at what you do?
 date: 2026-11-02
+topic: Great Work
 ---
 **You will always fall to the minimum standards you set.**
 
