@@ -1,10 +1,11 @@
 ---
 title: Why is sitting so bad for you?
 date: 2026-11-14
+topic: Exercise
 ---
 **Sitting switches off your largest muscles.**
 
-When these muscles stop contracting, insulin sensitivity drops, blood vessel health declines, and the enzymes that break down fat slow down. Over time, this leads to high blood sugar, high blood pressure, and weight gain.
+When these muscles stop contracting for prolonged periods, insulin sensitivity drops, blood vessel health declines, and the enzymes that break down fat slow down. Over time, this leads to high blood sugar, high blood pressure, and weight gain.
 
 A [2022 study](https://doi.org/10.1007/s12603-022-1727-6) tracked more than 17,000 adults in rural China for 6 years. Compared to sitting less than 4 hours a day:
 
