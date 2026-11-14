@@ -1,6 +1,7 @@
 ---
-title: How do experts practice productivity?
+title: Why should your to-do list have only six things?
 date: 2026-11-10
+topic: Attention
 ---
 Study the best in any field (scientists, entrepreneurs, artists, athletes, leaders) and you’ll find one trait they all share:
 
