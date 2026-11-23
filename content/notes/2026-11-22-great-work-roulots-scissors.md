@@ -1,5 +1,5 @@
 ---
-title: Great Work: Roulot’s Stork Scissors
+title: Great Work: Roulot’s Scissors
 date: 2026-11-22
 topic: Great Work
 ---
