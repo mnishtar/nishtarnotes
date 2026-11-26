@@ -2,7 +2,7 @@
 title: How do you prime your mind for peak performance?
 date: 2026-11-26
 ---
-**A busy mind produces mediocrity. A calm mind produces peak performance.**
+**A busy mind produces mediocrity. A calm mind produces excellence.**
 
 When your head spins with endless to-do lists and competing desires, your body floods with cortisol, adrenaline, and noradrenaline. This sympathetic overdrive leaves you anxious, irritable, and distracted. It also impairs your prefrontal cortex, the part of your brain that plans and makes decisions.
 
