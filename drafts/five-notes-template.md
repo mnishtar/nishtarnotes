@@ -5,13 +5,12 @@ slug: october-30-2026
 ---
 ## 1 Quote From Others
 
-**Who said it**:
-
+Who said it:
 "The quote goes here."
 
 *Source: Where it comes from*
 
-**Reflection:** Your reflection on the quote.
+Reflection: Your reflection on the quote.
 
 ## 3 Ideas From Me
 
