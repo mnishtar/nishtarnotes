@@ -6,6 +6,7 @@ slug: october-30-2026
 ## 1 Quote From Others
 
 Who said it:
+
 "The quote goes here."
 
 *Source: Where it comes from*
